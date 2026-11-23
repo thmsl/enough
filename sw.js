@@ -1,5 +1,5 @@
 // Offline-first service worker. Bump VERSION when shipping changes.
-const VERSION = 'enough-v20';
+const VERSION = 'enough-v21';
 const ASSETS = [
   './', './index.html', './manifest.webmanifest', './css/app.css',
   './js/app.js', './js/store.js', './js/calc.js', './js/content.js', './js/charts.js', './js/notify.js', './js/share.js',

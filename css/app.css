@@ -51,6 +51,8 @@
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
+/* No double-tap zoom on iOS (pinch-zoom still works) */
+html, body, button, a, label, input, select, textarea, [data-action] { touch-action: manipulation; }
 body {
   margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 var(--font);
   padding-bottom: calc(80px + env(safe-area-inset-bottom));
@@ -163,11 +165,11 @@ p.center.muted.small { margin: -10px 0 22px; }
 .form.disabled { opacity: .45; pointer-events: none; }
 .form label:not(.chip):not(.switch):not(.btn), .form fieldset { display: grid; gap: 6px; font-weight: 500; font-size: .88rem; color: var(--ink-2); }
 input:not([type=checkbox]):not([type=radio]):not([type=range]), select, textarea {
-  width: 100%; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); font-size: 1rem; color: var(--ink);
+  width: 100%; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); font-size: 16px; color: var(--ink); /* ≥16px: iOS zooms into smaller fields */
 }
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--ink-2); }
 textarea { resize: vertical; }
-.input-sm, .select-sm { width: auto !important; padding: 6px 12px !important; font-size: .88rem !important; border-radius: 99px !important; }
+.input-sm, .select-sm { width: auto !important; padding: 6px 12px !important; font-size: 16px !important; border-radius: 99px !important; }
 input[type=range] { width: 100%; accent-color: var(--ink); height: 28px; }
 fieldset { border: 0; padding: 0; margin: 0; }
 legend { font-weight: 500; font-size: .88rem; margin-bottom: 8px; padding: 0; color: var(--ink-2); }
